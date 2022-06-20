@@ -6,22 +6,38 @@
  */
 
 module.exports = {
-
+  tableName: "production",
   attributes: {
+    productID: {
+      type: 'number',
+      required: true,
+      columnName: 'productid'
+    },
+    quantity: {
+      type: 'number',
+      required: true,
+      columnName: 'quantity'
+    },
+    lotNumber: {
+      type: 'number',
+      columnName: 'lotnumber'
+    },
+    logID: {
+      type: 'number',
+      required: true,
+      columnName: 'logid'
+    },
+    userID: {
+      type: 'number',
+      required: true,
+      columnName: 'userid'
+    },
+    comments: {
+      type: 'string',
+      columnName: 'comments'
+    },
 
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-
-
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
 

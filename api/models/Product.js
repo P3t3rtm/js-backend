@@ -6,22 +6,34 @@
  */
 
 module.exports = {
-
+  tableName: "products",
   attributes: {
-
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-
-
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+    productName: {
+      type: 'string',
+      required: true,
+      columnName: 'productname'
+    },
+    imageID: {
+      type: 'number',
+      columnName: 'imageid'
+    },
+    price: {
+      type: 'number',
+      columnName: 'price'
+    },
+    barcode: {
+      type: 'number',
+      columnName: 'barcode'
+    },
+    taxable: {
+      type: 'boolean',
+      columnName: 'taxable'
+    },
+    quantity: {
+      type: 'number',
+      columnName: 'quantity'
+    },
+    
 
   },
 

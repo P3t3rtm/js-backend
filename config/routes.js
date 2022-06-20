@@ -10,28 +10,34 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` your home page.            *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+  // 'GET /*': {
+  //   skipAssets: true,
+  //   fn: function (req, res) {
+  //     return res.notFound();
+  //   }
+  // },
+  'GET /user/register': 'user/register',
+  // 'GET /user/confirm': 'user/confirm',
+  // 'GET /user/resend': 'user/resend',
+  // 'GET /user/auth': 'user/auth',
+  // 'GET /user/login': 'user/login',
+  // 'GET /user/forgot': 'user/forgot',
+  // 'GET /user/reset': 'user/reset',
+  // 'GET /user/changepass': 'user/changepass',
+  // 'GET /user/googlesignin': 'user/googlesignin',
+  // 'GET /user/facebooksignin': 'user/facebooksignin',
+  // 'GET /user/applesignin': 'user/applesignin',
+  // 'GET /user/editphone': 'user/editphone',
 
-  '/': { view: 'pages/homepage' },
+  // 'GET /address/add': 'address/add',
+  // 'GET /address/fetch': 'address/fetch',
+  // 'GET /address/remove': 'address/remove',
+  // 'GET /address/set': 'address/set',
 
 
-  /***************************************************************************
-  *                                                                          *
-  * More custom routes here...                                               *
-  * (See https://sailsjs.com/config/routes for examples.)                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the routes in this file, it   *
-  * is matched against "shadow routes" (e.g. blueprint routes).  If it does  *
-  * not match any of those, it is matched against static assets.             *
-  *                                                                          *
-  ***************************************************************************/
 
+  // 'GET /restaurant/fetch': 'restaurant/fetch',
+  // 'GET /menu/fetch': 'menu/fetch',
+  // 'GET /menuitem/fetch': 'menuitem/fetch',
 
 };

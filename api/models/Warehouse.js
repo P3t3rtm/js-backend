@@ -6,22 +6,29 @@
  */
 
 module.exports = {
-
+  tableName: "warehousing",
   attributes: {
 
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+    lotNumber: {
+      type: 'number',
+      required: true,
+      columnName: 'lotnumber'
+    },
+    logID: {
+      type: 'number',
+      required: true,
+      columnName: 'logid'
+    },
+    userID: {
+      type: 'number',
+      required: true,
+      columnName: 'userid'
+    },
+    comments: {
+      type: 'string',
+      columnName: 'comments'
+    },
 
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-
-
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
 

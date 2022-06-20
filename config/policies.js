@@ -9,6 +9,31 @@
  */
 
 module.exports.policies = {
+  '*': 'hasapi',
+
+
+
+
+
+
+  // 'user/changepass': 'hasjwt',
+  // 'user/editphone': 'hasjwt',
+
+  
+  // 'address/add': 'hasjwt',
+  // 'address/fetch': 'hasjwt',
+  // 'address/remove': 'hasjwt',
+  // 'address/set': 'hasjwt',
+
+
+  
+  // 'restaurant/fetch': 'hasjwt',
+  // 'menu/fetch': 'hasjwt',
+  // 'menuitem/fetch': 'hasjwt',
+
+
+
+
 
   /***************************************************************************
   *                                                                          *
