@@ -10,17 +10,11 @@
 
 module.exports.routes = {
 
-  // 'GET /*': {
-  //   skipAssets: true,
-  //   fn: function (req, res) {
-  //     return res.notFound();
-  //   }
-  // },
   'GET /user/register': 'user/register',
-  // 'GET /user/confirm': 'user/confirm',
-  // 'GET /user/resend': 'user/resend',
+  'GET /user/confirm': 'user/confirm',
+  'GET /user/resend': 'user/resend',
+  'GET /user/login': 'user/login',
   // 'GET /user/auth': 'user/auth',
-  // 'GET /user/login': 'user/login',
   // 'GET /user/forgot': 'user/forgot',
   // 'GET /user/reset': 'user/reset',
   // 'GET /user/changepass': 'user/changepass',

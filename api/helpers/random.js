@@ -1,7 +1,7 @@
 module.exports = {
 
 
-  friendlyName: 'Random',
+  friendlyName: 'Random 6 digit token number generator',
 
 
   description: 'Random something.',

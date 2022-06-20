@@ -1,5 +1,3 @@
-//const User = require("../../models/User");
-
 module.exports = {
 
 
@@ -29,10 +27,6 @@ module.exports = {
       required: true,
       minLength: 8,
     },
-    phoneNumber: {
-      type: 'number',
-      required: true,
-    },
   },
 
 
@@ -61,19 +55,17 @@ module.exports = {
     try {
       const newEmailAddress = inputs.email.toLowerCase();
       const token = await sails.helpers.random();
-      //console.log({ key: process.env(SENDGRID_API_KEY) });
       let newUser = await User.create({
         firstName: inputs.firstName,
         lastName: inputs.lastName,
         email: newEmailAddress,
-        phoneNumber: inputs.phoneNumber,
         password: await sails.helpers.passwords.hashPassword(inputs.password),
         emailProofToken: token,
         emailProofTokenExpiresAt:
           Date.now() + sails.config.custom.emailProofTokenTTL,
       }).fetch();
       const tkString = `${token}`;
-      const confirmLink = tkString.substr(0, 3) + ' ' + tkString.substr(3, 3);
+      const confirmLink = tkString.substring(0, 3) + ' ' + tkString.substring(3);
       const emails = {
         to: newUser.email,
         subject: 'Verify your email address',

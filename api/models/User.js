@@ -97,6 +97,8 @@ module.exports = {
     },
 
   },
-
+  customToJSON: function () {
+    return _.omit(this, ["password", "jwtToken", "passwordResetToken", "passwordResetTokenExpiresAt", "emailProofToken", "emailProofTokenExpiresAt", "emailStatus", "createdAt","updatedAt"]);
+  },
 };
 

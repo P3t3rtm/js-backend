@@ -15,6 +15,7 @@
     "nodemailer-sendgrid": "^1.0.3",
     "sails": "^1.5.2",
     "sails-hook-grunt": "^5.0.0",
+    "sails-hook-organics": "^2.2.0",
     "sails-hook-orm": "^4.0.0",
     "sails-hook-sockets": "^2.0.0",
     "sails-mysql": "^2.0.0"
