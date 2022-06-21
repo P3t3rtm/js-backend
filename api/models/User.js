@@ -95,6 +95,10 @@ module.exports = {
       type: 'number',
       columnName: 'refreshtoken'
     },
+    colorID: {
+      type: 'number',
+      columnName: 'colorid'
+    },
 
   },
   customToJSON: function () {

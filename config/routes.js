@@ -14,7 +14,13 @@ module.exports.routes = {
   'GET /user/confirm': 'user/confirm',
   'GET /user/resend': 'user/resend',
   'GET /user/login': 'user/login',
-  // 'GET /user/auth': 'user/auth',
+  'GET /user/auth': 'user/auth',
+
+  'GET /data/fetch': 'data/fetch',
+
+
+  'GET /production/fetch': 'production/fetch',
+  'GET /production/add': 'production/add',
   // 'GET /user/forgot': 'user/forgot',
   // 'GET /user/reset': 'user/reset',
   // 'GET /user/changepass': 'user/changepass',
@@ -23,15 +29,8 @@ module.exports.routes = {
   // 'GET /user/applesignin': 'user/applesignin',
   // 'GET /user/editphone': 'user/editphone',
 
-  // 'GET /address/add': 'address/add',
-  // 'GET /address/fetch': 'address/fetch',
-  // 'GET /address/remove': 'address/remove',
-  // 'GET /address/set': 'address/set',
 
+  // 'GET /user/auth': 'user/auth',
 
-
-  // 'GET /restaurant/fetch': 'restaurant/fetch',
-  // 'GET /menu/fetch': 'menu/fetch',
-  // 'GET /menuitem/fetch': 'menuitem/fetch',
 
 };
