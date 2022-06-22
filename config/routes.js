@@ -19,8 +19,9 @@ module.exports.routes = {
   'GET /data/fetch': 'data/fetch',
 
 
-  'GET /production/fetch': 'production/fetch',
+  'GET /production/fetchproducts': 'production/fetchproducts',
   'GET /production/add': 'production/add',
+
   // 'GET /user/forgot': 'user/forgot',
   // 'GET /user/reset': 'user/reset',
   // 'GET /user/changepass': 'user/changepass',

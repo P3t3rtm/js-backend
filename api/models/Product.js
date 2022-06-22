@@ -33,8 +33,11 @@ module.exports = {
       type: 'number',
       columnName: 'quantity'
     },
+    category: {
+      type: 'string',
+      columnName: 'category'
+    },
     
-
   },
 
 };
