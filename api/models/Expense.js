@@ -41,7 +41,7 @@ module.exports = {
     date: {
       type: "string",
       columnName: "date"
-    },
+    }
 
   },
 

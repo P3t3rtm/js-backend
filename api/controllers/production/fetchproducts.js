@@ -28,6 +28,7 @@ module.exports = {
                 return {
                     id: x.id,
                     name: x.productName,
+                    category: x.category,
                 }
             }
             ));

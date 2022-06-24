@@ -20,7 +20,8 @@ module.exports.routes = {
 
 
   'GET /production/fetchproducts': 'production/fetchproducts',
-  'GET /production/add': 'production/add',
+  'GET /production/produce': 'production/produce',
+  'GET /production/addproduct': 'production/addproduct',
 
   // 'GET /user/forgot': 'user/forgot',
   // 'GET /user/reset': 'user/reset',

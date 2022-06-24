@@ -15,8 +15,6 @@ module.exports = {
       required: true,
       columnName: "expensename"
     },
-    
-
   },
 
 };
