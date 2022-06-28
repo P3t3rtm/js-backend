@@ -36,7 +36,10 @@ module.exports = {
       type: 'string',
       columnName: 'comments'
     },
-
+    isConfirmed: {
+      type: 'boolean',
+      columnName: 'isconfirmed'
+    }
 
 
   },

@@ -14,7 +14,7 @@ module.exports = {
       required: true,
       columnName: "userid"
     },
-    details: {
+    logAction: {
       type: "string",
       required: true,
       columnName: "details"

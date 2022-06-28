@@ -11,31 +11,24 @@ module.exports = {
         productName: {
             type: 'string',
             required: true,
-            columnName: 'productname'
         },
         imageID: {
             type: 'number',
-            columnName: 'imageid'
         },
         price: {
             type: 'number',
-            columnName: 'price'
         },
         barcode: {
             type: 'number',
-            columnName: 'barcode'
         },
         taxable: {
             type: 'boolean',
-            columnName: 'taxable'
         },
         quantity: {
             type: 'number',
-            columnName: 'quantity'
         },
         category: {
             type: 'string',
-            columnName: 'category'
         }
     },
 
@@ -52,13 +45,11 @@ module.exports = {
 
     fn: async function (inputs,exits) {
         try {
-            let product = await Product.create(inputs);
+            const product = await Product.create(inputs).fetch();
             return exits.success(product);
 
         } catch (error) {
-            return exits.invalid({
-                error: error.message,
-            });
+            return exits.invalid({ error: error.message });
         }
     },
 };

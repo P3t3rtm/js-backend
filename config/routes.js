@@ -17,11 +17,14 @@ module.exports.routes = {
   'GET /user/auth': 'user/auth',
 
   'GET /data/fetch': 'data/fetch',
+  'GET /data/fetchusers': 'data/fetchusers',
+  'GET /data/addlog': 'data/addlog',
 
 
   'GET /production/fetchproducts': 'production/fetchproducts',
-  'GET /production/produce': 'production/produce',
+  'POST /production/addproduction': 'production/addproduction',
   'GET /production/addproduct': 'production/addproduct',
+  'GET /production/fetchproduction': 'production/fetchproduction',
 
   // 'GET /user/forgot': 'user/forgot',
   // 'GET /user/reset': 'user/reset',

@@ -68,7 +68,7 @@ module.exports = {
             Date.now() + sails.config.custom.emailProofTokenTTL,
         });
         const tkString = `${cmtoken}`;
-        const confirmLink = tkString.substr(0, 3) + ' ' + tkString.substr(3, 3);
+        const confirmLink = tkString.substring(0, 3) + ' ' + tkString.substring(3);
         const emails = {
           to: user.email,
           subject: 'Verify your email address',

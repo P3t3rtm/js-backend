@@ -8,17 +8,13 @@ module.exports = {
 
 
   inputs: {
-    jwtToken: {
-      type: 'string',
-      required: true,
-    },
   },
 
 
   exits: {
-    jwtInvalid: {
-      statusCode: 403,
-      description: 'provided token is invalid',
+    invalid: {
+      statusCode: 400,
+      description: 'something fked up',
     },
     success: {
       statusCode: 200,
@@ -27,16 +23,14 @@ module.exports = {
   },
 
 
-  fn: async function (inputs,exits) {
+  fn: async function (inputs, exits, env) {
 
     try {
-      const user = await User.findOne({ jwtToken: inputs.jwtToken });
-      if (!user) return exits.jwtInvalid();
+      const user = await User.findOne({ jwtToken: env.req.headers.jwt || 1 });
+      if (!user) return exits.invalid();
       else return exits.success(user);
     } catch (error) {
-      return exits.error({
-        error: error.message,
-      });
+      return exits.invalid({ error: error.message });
     }
 
   }

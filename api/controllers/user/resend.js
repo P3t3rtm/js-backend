@@ -50,7 +50,7 @@ module.exports = {
       }
       if (user.emailStatus === "unconfirmed") {
         const tkString = `${user.emailProofToken}`;
-        const confirmLink = tkString.substr(0, 3) + ' ' + tkString.substr(3, 3);
+        const confirmLink = tkString.substring(0, 3) + ' ' + tkString.substring(3);
         const emails = {
           to: user.email,
           subject: 'Account Verification Code',
