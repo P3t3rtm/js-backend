@@ -76,7 +76,7 @@ module.exports = {
       defaultsTo: false,
       columnName: 'accessproduction'
     },
-    accessWarehousing: {
+    accessInventory: {
       type: 'boolean',
       defaultsTo: false,
       columnName: 'accesswarehousing'

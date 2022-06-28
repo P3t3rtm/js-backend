@@ -39,6 +39,10 @@ module.exports = {
     isConfirmed: {
       type: 'boolean',
       columnName: 'isconfirmed'
+    },
+    confirmID: {
+      type: 'number',
+      columnName: 'confirmid'
     }
 
 

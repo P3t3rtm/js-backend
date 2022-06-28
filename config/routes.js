@@ -25,6 +25,7 @@ module.exports.routes = {
   'POST /production/addproduction': 'production/addproduction',
   'GET /production/addproduct': 'production/addproduct',
   'GET /production/fetchproduction': 'production/fetchproduction',
+  'GET /production/confirmproduction': 'production/confirmproduction',
 
   // 'GET /user/forgot': 'user/forgot',
   // 'GET /user/reset': 'user/reset',

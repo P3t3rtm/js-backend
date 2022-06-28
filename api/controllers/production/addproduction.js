@@ -37,7 +37,6 @@ module.exports = {
     },
 
 
-
     fn: async function (inputs, exits, env) {
         try {
             const user = await User.findOne({ jwtToken: env.req.headers.jwt || 1 });
