@@ -37,7 +37,7 @@ module.exports = {
       columnName: 'comments'
     },
     isConfirmed: {
-      type: 'boolean',
+      type: 'number',
       columnName: 'isconfirmed'
     },
     confirmID: {

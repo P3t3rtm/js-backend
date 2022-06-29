@@ -22,8 +22,7 @@ module.exports = {
     },
 
     fn: async function (inputs, exits) {
-        try {//where production.isConfirmed = false
-
+        try {
 //check if user has inventory privilege
             let user = await User.findOne({ jwtToken: this.req.headers.jwt || 1 });
             if (!user) return exits.invalid();
@@ -32,7 +31,7 @@ module.exports = {
                 let productions = await Production.find({}).sort('id DESC');
                 return exits.success(productions);
             } else {
-                let productions = await Production.find({ isConfirmed: false }).sort('id DESC');
+                let productions = await Production.find({ isConfirmed: 0 }).sort('id DESC');
                 return exits.success(productions);
             }
         } catch (error) {

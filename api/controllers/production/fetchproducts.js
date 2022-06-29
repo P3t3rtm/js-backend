@@ -29,6 +29,7 @@ module.exports = {
                     id: x.id,
                     name: x.productName,
                     category: x.category,
+                    quantity: x.quantity,
                 }
             }
             ));

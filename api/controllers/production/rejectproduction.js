@@ -1,10 +1,10 @@
 module.exports = {
 
 
-    friendlyName: 'Confirm production',
+    friendlyName: 'Add',
 
 
-    description: 'Confirm production.',
+    description: 'Add production.',
 
 
     inputs: {
@@ -18,7 +18,7 @@ module.exports = {
 
     exits: {
         success: {
-            description: 'Production lot confirmed.'
+            description: 'Production lot rejected.'
         },
 
         invalid: {
@@ -27,7 +27,7 @@ module.exports = {
         },
         forbidden: {
             statusCode: 403,
-            description: 'You are not authorized to confirm this production lot.'
+            description: 'You are not authorized to reject this production lot.'
         }
     },
 
@@ -40,7 +40,7 @@ module.exports = {
             if (!user.accessInventory) return exits.forbidden();
             //set isConfirmed to true for all productions with this lotNumber
             await Production.update({ lotNumber: inputs.lotNumber }).set({
-                isConfirmed: 1,
+                isConfirmed: 2,
                 confirmID: user.id,
             });
             return exits.success();
