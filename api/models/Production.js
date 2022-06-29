@@ -22,30 +22,6 @@ module.exports = {
       type: 'number',
       columnName: 'lotnumber'
     },
-    logID: {
-      type: 'number',
-      required: true,
-      columnName: 'logid'
-    },
-    userID: {
-      type: 'number',
-      required: true,
-      columnName: 'userid'
-    },
-    comments: {
-      type: 'string',
-      columnName: 'comments'
-    },
-    isConfirmed: {
-      type: 'number',
-      columnName: 'isconfirmed'
-    },
-    confirmID: {
-      type: 'number',
-      columnName: 'confirmid'
-    }
-
-
   },
 
 };

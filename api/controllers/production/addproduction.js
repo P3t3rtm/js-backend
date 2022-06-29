@@ -44,56 +44,50 @@ module.exports = {
 
 
             let newProduction;
+            let newLot;
 
+
+
+            //create the log
+            let newLog = await Log.create({
+                userID: user.id,
+                logAction: 'New lot created by ' + user.username,
+            }).fetch();
+
+
+            if (!user.accessInventory) {
+                newLot = await Lot.create({
+                    userID: user.id,
+                    logID: newLog.id,
+                    isConfirmed: 0,
+                    comments: inputs.comments,
+                }).fetch();
+            }
+            else {
+                newLot = await Lot.create({
+                    userID: user.id,
+                    logID: newLog.id,
+                    isConfirmed: 1,
+                    confirmID: user.id,
+                    comments: inputs.comments,
+                }).fetch();
+            }
 
             for (let i = 0; i < env.req.body.values.length; i++) {
-                if (i == 0) {
-                    newProduction = await Production.create({
-                        productID: env.req.body.values[i].productID,
-                        quantity: env.req.body.values[i].quantity,
-                        logID: inputs.logID,
-                        comments: inputs.comments,
-                        userID: user.id,
-                    }).fetch();
-                    //update lotNumber with new production id
-                    await Production.update({ id: newProduction.id }).set({
-                        lotNumber: newProduction.id
-                    });
+                newProduction = await Production.create({
+                    productID: env.req.body.values[i].productID,
+                    quantity: env.req.body.values[i].quantity,
+                    lotID: newLot.id,
+                }).fetch();
 
-                    const product = await Product.findOne({ id: env.req.body.values[i].productID });
-                    //update product quantity with new quantity added on to old
-                    await Product.update({ id: env.req.body.values[i].productID }).set({
-                        quantity: product.quantity + env.req.body.values[i].quantity,
-                    });
-
-
-                } else {
-                    await Production.create({
-                        productID: env.req.body.values[i].productID,
-                        quantity: env.req.body.values[i].quantity,
-                        logID: inputs.logID,
-                        comments: inputs.comments,
-                        userID: user.id,
-                        lotNumber: newProduction.id,
-                    });
-
-                    const product = await Product.findOne({ id: env.req.body.values[i].productID });
-
-
-                    //update product quantity with new quantity added on to old
-                    await Product.update({ id: env.req.body.values[i].productID }).set({
-                        quantity: product.quantity + env.req.body.values[i].quantity,
-                    });
-
-                }
+                //update product quantity with new quantity added on to old
+                const product = await Product.findOne({ id: env.req.body.values[i].productID });
+                await Product.update({ id: env.req.body.values[i].productID }).set({
+                    quantity: product.quantity + env.req.body.values[i].quantity,
+                });
 
             }
-            return exits.success(newProduction.id);
-
-            //update products; add production quantity to product quantity
-
-
-
+            return exits.success(newLot.id);
 
 
         } catch (error) {
