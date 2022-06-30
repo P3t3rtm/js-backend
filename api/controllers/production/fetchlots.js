@@ -1,5 +1,3 @@
-const Lot = require("../../models/Lot");
-
 module.exports = {
 
 
@@ -30,25 +28,26 @@ module.exports = {
         try {
             //check if user has inventory privilege
             let user = await User.findOne({ jwtToken: this.req.headers.jwt || 1 });
+            let lots;
             if (!user) return exits.invalid();
             //if user has inventory privilege, then return all productions, otherwise, return only unconfirmed productions
             if (user.accessInventory) {
                 if (!inputs.lastLot) {
-                    let lots = await Lot.find({}).sort('id DESC').limit(3);
+                    lots = await Lot.find({}).sort('id DESC').limit(20);
                 }
                 else {
-                    let lots = await Lot.find({ id: { '>': inputs.lastLot } }).sort('id DESC').limit(3);
+                    lots = await Lot.find({ id: { '<': inputs.lastLot } }).sort('id DESC').limit(20);
                 }
                 return exits.success(lots);
             } else {
                 if (!inputs.lastLot) {
-                    let lots = await Lot.find({ isConfirmed: 0 }).sort('id DESC').limit(3);
+                    lots = await Lot.find({ isConfirmed: 0 }).sort('id DESC').limit(20);
                 }
                 else {
-                    let lots = await Lot.find({ id: { '>': inputs.lastLot }, isConfirmed: 0 }).sort('id DESC').limit(3);
+                    lots = await Lot.find({ id: { '<': inputs.lastLot }, isConfirmed: 0 }).sort('id DESC').limit(20);
                 }
-
                 return exits.success(lots);
+
 
             }
         } catch (error) {

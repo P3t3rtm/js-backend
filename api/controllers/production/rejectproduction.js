@@ -39,10 +39,7 @@ module.exports = {
             if (!user) return exits.invalid();
             if (!user.accessInventory) return exits.forbidden();
             //set isConfirmed to true for all productions with this lotNumber
-            await Production.update({ lotNumber: inputs.lotNumber }).set({
-                isConfirmed: 2,
-                confirmID: user.id,
-            });
+            await Lot.update({ id: inputs.lotNumber }).set({ isConfirmed: 2, confirmID: user.id });
             return exits.success();
         } catch (error) {
             return exits.invalid({

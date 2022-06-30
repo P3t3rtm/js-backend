@@ -38,11 +38,8 @@ module.exports = {
             const user = await User.findOne({ jwtToken: env.req.headers.jwt || 1 });
             if (!user) return exits.invalid();
             if (!user.accessInventory) return exits.forbidden();
-            //set isConfirmed to true for all productions with this lotNumber
-            await Production.update({ lotNumber: inputs.lotNumber }).set({
-                isConfirmed: 1,
-                confirmID: user.id,
-            });
+            //set isConfirmed to true for this lot
+            await Lot.update({ id: inputs.lotNumber }).set({ isConfirmed: 1, confirmID: user.id });
             return exits.success();
         } catch (error) {
             return exits.invalid({

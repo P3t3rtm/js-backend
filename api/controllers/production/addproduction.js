@@ -8,10 +8,6 @@ module.exports = {
 
 
     inputs: {
-        logID: {
-            type: 'number',
-            required: true,
-        },
         comments: {
             type: 'string',
         },
@@ -51,8 +47,9 @@ module.exports = {
             //create the log
             let newLog = await Log.create({
                 userID: user.id,
-                logAction: 'New lot created by ' + user.username,
+                logAction: 'New lot created by ' + user.firstName + ' ' + user.lastName,
             }).fetch();
+            if (!newLog) return exits.invalid();
 
 
             if (!user.accessInventory) {
@@ -73,11 +70,13 @@ module.exports = {
                 }).fetch();
             }
 
+            if (!newLot) return exits.invalid();
+
             for (let i = 0; i < env.req.body.values.length; i++) {
                 newProduction = await Production.create({
                     productID: env.req.body.values[i].productID,
                     quantity: env.req.body.values[i].quantity,
-                    lotID: newLot.id,
+                    lotNumber: newLot.id,
                 }).fetch();
 
                 //update product quantity with new quantity added on to old
